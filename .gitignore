@@ -1,3 +1,5 @@
 .idea
 runehistory.egg-info
 dist
+*.pyc
+*.pyo
