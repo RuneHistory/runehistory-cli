@@ -58,7 +58,7 @@ class HighScores(dict):
     def __init__(self, **kwargs):
         """
         Args:
-            **kwargs (dict): Skill name > Skill
+            **kwargs (dict of str: Skill):
         """
         for skill in kwargs.keys():
             if skill not in SKILLS_ORDER:
