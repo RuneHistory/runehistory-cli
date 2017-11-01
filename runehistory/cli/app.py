@@ -15,7 +15,3 @@ class RuneHistory(CementApp):
 def run(argv=None):
     with RuneHistory(argv=argv) as app:
         app.run()
-
-
-if __name__ == '__main__':
-    run()
