@@ -11,7 +11,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'cement>=2.10.0,<2.11',
-        'requests>=2.18,3'
+        'requests>=2.18,<3'
     ],
     entry_points={
         'console_scripts': [
