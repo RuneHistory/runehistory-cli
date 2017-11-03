@@ -1,3 +1,4 @@
+from cement.core.exc import CaughtSignal
 from cement.core.foundation import CementApp
 from .controllers.base import BaseController
 from .controllers.highscores import HighScoresController
@@ -17,5 +18,8 @@ class RuneHistory(CementApp):
 def run():
     with RuneHistory() as app:
         app.setup()
-        app.run()
+        try:
+            app.run()
+        except (KeyboardInterrupt, SystemExit, CaughtSignal):
+            print('Exiting...')
         app.close()
