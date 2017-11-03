@@ -8,6 +8,7 @@ def get_raw_highscores(player: str) -> str:
         'http://services.runescape.com/m=hiscore_oldschool/index_lite.ws', {
             'player': player
         })
+    response.raise_for_status()
     return response.content.decode('utf-8')
 
 
@@ -52,8 +53,10 @@ class RuneHistoryApi(object):
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
-        return requests.request(method, url, params=params, data=encoded_data,
-                                headers=headers)
+        response = requests.request(method, url, params=params,
+                                    data=encoded_data, headers=headers)
+        response.raise_for_status()
+        return response
 
 
 def setup(host: str):
