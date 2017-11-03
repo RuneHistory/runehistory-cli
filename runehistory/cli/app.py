@@ -14,6 +14,8 @@ class RuneHistory(CementApp):
         ]
 
 
-def run(argv=None):
-    with RuneHistory(argv=argv) as app:
+def run():
+    with RuneHistory() as app:
+        app.setup()
         app.run()
+        app.close()
