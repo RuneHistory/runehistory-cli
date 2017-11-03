@@ -1,5 +1,5 @@
 from cement.core.controller import CementBaseController, expose
-from runehistory.encoding import JSONEncoder
+from runehistory.utils import to_dict
 import json
 
 
@@ -20,4 +20,4 @@ class HighScoresController(CementBaseController):
     def default(self):
         from runehistory.highscores import get
         highscores = get(self.app.pargs.player)
-        print(json.dumps(highscores, cls=JSONEncoder))
+        print(json.dumps(to_dict(highscores)))

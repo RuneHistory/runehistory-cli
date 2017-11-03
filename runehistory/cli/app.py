@@ -1,6 +1,7 @@
 from cement.core.foundation import CementApp
 from .controllers.base import BaseController
 from .controllers.highscores import HighScoresController
+from .controllers.polling import PollingController
 
 
 class RuneHistory(CementApp):
@@ -8,7 +9,8 @@ class RuneHistory(CementApp):
         label = 'runehistory'
         handlers = [
             BaseController,
-            HighScoresController
+            HighScoresController,
+            PollingController
         ]
 
 
