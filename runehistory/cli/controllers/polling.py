@@ -34,7 +34,7 @@ class PollingController(CementBaseController):
                 dict(
                     help='Runehistory api host',
                     dest='api_host',
-                    default='http://api.runehistory.local/v1'
+                    default='http://api.runehistory.com/v1'
                 )
             ),
         ]
