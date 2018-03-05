@@ -1,4 +1,8 @@
 from cement.core.controller import CementBaseController, expose
+from ioccontainer import inject
+
+from runehistory_cli.app.api import RuneHistoryApi
+from runehistory_cli.app.polling import start
 
 
 class PollingController(CementBaseController):
@@ -40,10 +44,9 @@ class PollingController(CementBaseController):
         ]
 
     @expose(hide=True)
-    def default(self):
-        from runehistory.polling import start
-        from runehistory.api import setup
-        setup(self.app.pargs.api_host)
+    @inject('rhapi')
+    def default(self, rhapi: RuneHistoryApi):
+        rhapi.host = self.app.pargs.api_host
         time = self.app.pargs.time
         time = int(time) if time is not None else None
         start(self.app.pargs.unchanged_min, self.app.pargs.unchanged_max, time)
