@@ -28,17 +28,21 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.6',
     ],
+    setup_requires=['pytest-runner'],
     install_requires=[
-        'cmdbus>=1.0.1,<2',
-        'evntbus>=1.2.1,<2',
-        'ioccontainer>=1.0.5,<2',
         'typing',
-        'runehistory-core>=0.0.16,<1',
-        'cement>=2.10.0,<2.11',
         'requests>=2.18,<3',
+        'cement>=2.10.0,<2.11',
+        'ioccontainer>=1.0.5,<2',
+        'pyrunehistory>=0.0.1,<1',
+    ],
+    tests_require=[
+        'pytest',
     ],
     extras_require={
-        'test': ['coverage', 'pytest', 'pytest-watch', 'tox']
+        'test': [
+            'coverage', 'tox'
+        ]
     },
     entry_points={
         'console_scripts': [
