@@ -32,9 +32,9 @@ setup(
     install_requires=[
         'typing',
         'requests>=2.18,<3',
-        'cement>=2.10.0,<2.11',
+        'click>=6.7,<7',
         'ioccontainer>=1.0.5,<2',
-        'pyrunehistory>=0.0.1,<1',
+        'pyrunehistory>=0.0.3,<1',
     ],
     tests_require=[
         'pytest',

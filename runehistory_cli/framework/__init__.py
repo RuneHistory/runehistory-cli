@@ -1,14 +1,21 @@
-from cement.core.foundation import CementApp
-from runehistory_cli.framework.controllers.base import BaseController
-from runehistory_cli.framework.controllers.highscore import HighScoreController
-from runehistory_cli.framework.controllers.polling import PollingController
+import click
+from ioccontainer import provider, scopes
+from pyrunehistory.client import Client
+
+from runehistory_cli.framework.controllers.highscore import highscore
+from runehistory_cli.framework.controllers.poll import poll
 
 
-class RuneHistory(CementApp):
-    class Meta:
-        label = 'runehistory'
-        handlers = [
-            BaseController,
-            HighScoreController,
-            PollingController
-        ]
+@click.group()
+@click.option('--host', default=None, help='RuneHistory API host')
+def cli(host):
+    @provider(Client, scopes.SINGLETON)
+    def provide_rh_client():
+        args = {}
+        if host:
+            args['host'] = host
+        return Client(**args)
+
+
+cli.add_command(highscore)
+cli.add_command(poll)
