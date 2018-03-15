@@ -20,10 +20,3 @@ class HighScore(RHHighScore):
                  created_at: datetime, skills: typing.Dict[str, Skill],
                  id: str = None):
         super().__init__(account_id, id, created_at, skills)
-
-
-def to_skills(skills: typing.Dict[str, dict]):
-    return {
-        name: Skill(**skill)
-        for name, skill in skills.items()
-    }
