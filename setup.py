@@ -34,7 +34,7 @@ setup(
         'requests>=2.18,<3',
         'click>=6.7,<7',
         'ioccontainer>=1.0.5,<2',
-        'pyrunehistory>=1.0.0,<2',
+        'pyrunehistory>=1.0.1,<2',
     ],
     tests_require=[
         'pytest',
