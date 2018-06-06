@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
-github = 'https://github.com/jmwri/runehistory-cli'
-version = '0.1.1'
+github = 'https://github.com/runehistory/runehistory-cli'
+version = '0.1.2'
 
 setup(
     name='runehistory-cli',
