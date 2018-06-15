@@ -18,7 +18,7 @@ def start(unchanged_min: Union[int, None] = None,
 
     while True:
         before_time = None if not time else \
-            datetime.datetime.now() - datetime.timedelta(minutes=time)
+            datetime.datetime.utcnow() - datetime.timedelta(minutes=time)
         accounts = rh.accounts.get_accounts(unchanged_min, unchanged_max,
                                             before_time)
         if not len(accounts):
