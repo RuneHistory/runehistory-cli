@@ -7,7 +7,8 @@ from runehistory_cli.framework.controllers.poll import poll
 
 
 @click.group()
-@click.option('--host', default=None, help='RuneHistory API host')
+@click.option('--host', envvar='RH_HOST', default=None,
+              help='RuneHistory API host')
 @click.option('--username', envvar='RH_USERNAME', help='Account username')
 @click.option('--password', envvar='RH_PASSWORD', help='Account password')
 @click.option('--secret', envvar='RH_SECRET', help='JWT secret')
