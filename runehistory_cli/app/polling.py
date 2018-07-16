@@ -6,9 +6,8 @@ from ioccontainer import inject
 from requests.exceptions import ConnectionError
 from pyrunehistory.client import Client
 from pyrunehistory.domain.models.account import Account
-
-from runehistory_cli.domain.models.highscore import HighScore
-from runehistory_cli.app.highscore import get
+from pyrunehistory.domain.models.highscore import HighScore
+from pyrunehistory.osrs import get_highscore as get
 
 
 @inject('rh')

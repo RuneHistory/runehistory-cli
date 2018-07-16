@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 github = 'https://github.com/runehistory/runehistory-cli'
-version = '0.2.1'
+version = '0.2.2'
 
 setup(
     name='runehistory-cli',
@@ -34,7 +34,7 @@ setup(
         'requests>=2.18,<3',
         'click>=6.7,<7',
         'ioccontainer>=1.0.5,<2',
-        'pyrunehistory>=1.0.5,<2',
+        'pyrunehistory>=1.1.1,<2',
     ],
     tests_require=[
         'pytest',

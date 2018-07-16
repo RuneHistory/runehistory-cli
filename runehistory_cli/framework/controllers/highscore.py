@@ -3,8 +3,7 @@ import json
 import click
 from ioccontainer import inject
 from pyrunehistory.client import Client
-
-from runehistory_cli.app.highscore import get
+from pyrunehistory.osrs import get_highscore
 
 
 @click.command()
@@ -12,5 +11,5 @@ from runehistory_cli.app.highscore import get
 @inject('rh')
 def highscore(rh: Client, slug):
     account = rh.accounts.get_account(slug)
-    highscore = get(account)
+    highscore = get_highscore(account)
     print(json.dumps(highscore.get_encodable()))
